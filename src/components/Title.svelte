@@ -1,6 +1,8 @@
+<script>
+  export let id;
+</script>
 
-
-<h2><slot></slot></h2>
+<h2 {id}><slot></slot></h2>
 
 <style>
   h2 {

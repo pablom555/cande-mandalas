@@ -1,5 +1,5 @@
 <script>
-  let giraMandala = false;
+  
 </script>
 
 <div class="banner">
@@ -8,7 +8,7 @@
   </div>
   <div class="banner-center">
     <div class="mandala  animate__animated animate__rotateIn" ></div>
-    <h2>Candu Mandalas {giraMandala}</h2>
+    <h2>Candu Mandalas</h2>
   </div>
 
   <div class="banner-right">

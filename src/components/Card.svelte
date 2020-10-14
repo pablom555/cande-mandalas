@@ -17,7 +17,7 @@
 </script>  
 
   
-  <div class="card" class:show={isShow} on:click={clickHandler}>
+  <div class="card" class:show={isShow} on:click={clickHandler} >
     <div class="card__image-holder">
       <img class="card__image" src="https://source.unsplash.com/300x225/?wave" alt="wave" />
     </div>
@@ -45,8 +45,8 @@
   
 <style>
   
-  div.card {
-  margin: 8px;
+div.card {
+  margin: 10px 8px 50px;
   max-width: 280px;
   box-shadow: 0px 2px 5px -5px rgba(0,0,0,1);;
   position: relative;
@@ -130,7 +130,7 @@ a.btn {
 	box-shadow: 0 1px 0px 0 rgba(0,0,0,0.25);
   color: white;
   display: inline-block;
-  padding: 6px 30px 8px;
+  padding: 6px 8px;
   position: relative;
   text-decoration: none;
 	transition: all 0.1s 0s ease-out;

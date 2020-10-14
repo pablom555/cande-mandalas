@@ -1,6 +1,8 @@
 <script>
-
-	import Card from './Card.svelte';
+	
+  import Card from './Card.svelte';
+  import ProductDetail from './ProductDetail.svelte';
+  import * as animateScroll from "svelte-scrollto";
   
   let products = [
     {id: 1, isShow: false},
@@ -14,6 +16,7 @@
   ]
 
   let isShowing = false;
+  let isMore = false;
 
   const clickShowHandler = (id) => {
 
@@ -34,17 +37,25 @@
 
   const moreShowHandler = (id) => {
 
-    console.log(id)
+    isMore = true
+    animateScroll.scrollTo({element: '#destacados'})
 
   }
 
 </script>
 
-<div class="cards" class:showing={isShowing}>
+<div class="cards" class:showing={isShowing} >
+  
+  {#if isMore}
+    <ProductDetail on:click={() => isMore = false} />
+  {/if}
 
   {#each products as product (product.id)}
-
-    <Card isShow={product.isShow} on:clickShow={clickShowHandler(product.id)} on:moreShow={moreShowHandler(product.id)}/>
+    <Card isShow={product.isShow} 
+          on:clickShow={() => clickShowHandler(product.id)} 
+          on:moreShow={() => moreShowHandler(product.id)}
+          
+    />
 
   {/each}
 
