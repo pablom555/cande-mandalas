@@ -8,7 +8,7 @@
   h2 {
     letter-spacing: 2px;
     font-size: 30px;
-    margin: 50px 0 30px 0;
+    padding: 50px 0 30px 0;
     text-align: center;
     display: flex;    
     justify-content: center;

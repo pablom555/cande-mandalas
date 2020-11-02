@@ -5,18 +5,47 @@
   import * as animateScroll from "svelte-scrollto";
   
   let products = [
-    {id: 1, isShow: false},
-    {id: 2, isShow: false},
-    {id: 3, isShow: false},
-    {id: 4, isShow: false},
-    {id: 5, isShow: false},
-    {id: 6, isShow: false},
-    {id: 7, isShow: false},
-    {id: 8, isShow: false},
+    {
+      id: 1, 
+      title: 'Titulo', 
+      subtitle: 'Subtitulo producto', 
+      description: "This grid is an attempt to make something nice that works on touch devices. Ignoring hover states when they're not available etc.", 
+      img: "https://source.unsplash.com/300x225/?wave",
+      price: 450,
+      isShow: false
+    },
+    {
+      id: 2, 
+      title: 'Titulo', 
+      subtitle: 'Subtitulo producto', 
+      description: "This grid is an attempt to make something nice that works on touch devices. Ignoring hover states when they're not available etc.", 
+      img: "https://source.unsplash.com/300x225/?wave",
+      price: 250,
+      isShow: false
+    },
+    {
+      id: 3, 
+      title: 'Titulo', 
+      subtitle: 'Subtitulo producto', 
+      description: "This grid is an attempt to make something nice that works on touch devices. Ignoring hover states when they're not available etc.", 
+      img: "https://source.unsplash.com/300x225/?wave",
+      price: 500,
+      isShow: false
+    },
+    {
+      id: 4, 
+      title: 'Titulo', 
+      subtitle: 'Subtitulo producto', 
+      description: "This grid is an attempt to make something nice that works on touch devices. Ignoring hover states when they're not available etc.", 
+      img: "https://source.unsplash.com/300x225/?wave",
+      price: 465,
+      isShow: false
+    },
   ]
 
   let isShowing = false;
   let isMore = false;
+  let selectedData;
 
   const clickShowHandler = (id) => {
 
@@ -35,8 +64,9 @@
 
   }
 
-  const moreShowHandler = (id) => {
+  const moreShowHandler = (id, data) => {
 
+    selectedData = data;
     isMore = true
     animateScroll.scrollTo({element: '#destacados'})
 
@@ -47,16 +77,17 @@
 <div class="cards" class:showing={isShowing} >
   
   {#if isMore}
-    <ProductDetail on:click={() => isMore = false} />
+    <ProductDetail
+      data={selectedData} 
+      on:click={() => isMore = false} />
   {/if}
 
   {#each products as product (product.id)}
-    <Card isShow={product.isShow} 
+    <Card data={product}
           on:clickShow={() => clickShowHandler(product.id)} 
-          on:moreShow={() => moreShowHandler(product.id)}
+          on:moreShow={(data) => moreShowHandler(product.id, data.detail)}
           
     />
-
   {/each}
 
 </div>

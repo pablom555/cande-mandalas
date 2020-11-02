@@ -2,42 +2,44 @@
 
   import { createEventDispatcher } from 'svelte'; 
 
-  export let isShow = false;
+  // export let isShow = false;
+  export let data = {};
   
   const dispatch = createEventDispatcher();
 
   const clickHandler = () => {
-    dispatch('clickShow', isShow)
+    dispatch('clickShow', data.isShow)
   }
 
   const moreHandler = (e) => {
-    dispatch('moreShow', e.target)
+    dispatch('moreShow', data)
   }
 
 </script>  
 
-  
-  <div class="card" class:show={isShow} on:click={clickHandler} >
+<!-- Html -->  
+  <div class="card" class:show={data.isShow} on:click={clickHandler} >
     <div class="card__image-holder">
-      <img class="card__image" src="https://source.unsplash.com/300x225/?wave" alt="wave" />
+      <img class="card__image" src={data.img} alt="wave" />
     </div>
     <div class="card-title">
-      <a href="#0" class="toggle-info btn">
+      <a href={void(0)} class="toggle-info btn">
         <span class="left"></span>
         <span class="right"></span>
       </a>
       <h2>
-          Card title
-          <small>Image from unsplash.com</small>
+          {data.title}
+          <small>{data.subtitle}</small>
+          <small>${data.price}</small>
       </h2>
     </div>
     <div class="card-flap flap1">
       <div class="card-description">
-        This grid is an attempt to make something nice that works on touch devices. Ignoring hover states when they're not available etc.
+        {data.description}
       </div>
       <div class="card-flap flap2">
         <div class="card-actions">
-          <a href="#0" class="btn" on:click={moreHandler}>Read more</a>
+          <a href={void(0)} class="btn" on:click={moreHandler}>Leer Mas</a>
         </div>
       </div>
     </div>
@@ -48,7 +50,7 @@
 div.card {
   margin: 10px 8px 50px;
   max-width: 280px;
-  box-shadow: 0px 2px 5px -5px rgba(0,0,0,1);;
+  box-shadow: 0px 2px 5px -5px rgba(0,0,0,1);
   position: relative;
   text-align: left;
   transition: all 0.3s 0s ease-in;

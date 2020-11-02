@@ -14,7 +14,7 @@
 <style>
 
   .social {
-    margin-top: 30px;
+    padding-top: 30px;
   }
 
   .social p {

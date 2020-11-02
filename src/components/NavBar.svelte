@@ -1,5 +1,18 @@
 <script>
-  // your script goes here
+
+    import { push } from "svelte-spa-router";
+    import * as animateScroll from "svelte-scrollto";
+
+    const goTo = (page, moveto) => {
+
+        push(page);
+        moveTo(moveto);
+    }
+
+    const moveTo = (where) => {
+        animateScroll.scrollTo({element: where})
+    }
+
 </script>
 
 <nav>
@@ -10,10 +23,10 @@
 
   <div class="menu">
     <ul>
-      <li>Inicio</li>
-      <li>Productos</li>
-      <li>Como Comprar</li>
-      <li>Sobre Mi</li>
+      <li on:click={() => goTo('/', '.social')}>Inicio</li>
+      <li on:click={() => goTo('/products', '#destacados')}>Productos</li>
+      <li on:click={() => moveTo('#comoComprar')}>Como Comprar</li>
+      <li on:click={() => moveTo('#sobreMi')}>Sobre Mi</li>
     </ul>
   </div>
 
