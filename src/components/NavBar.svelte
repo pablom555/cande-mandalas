@@ -23,7 +23,7 @@
 
   <div class="menu">
     <ul>
-      <li on:click={() => goTo('/', '.social')}>Inicio</li>
+      <li on:click={() => goTo('/', '.logo')}>Inicio</li>
       <li on:click={() => goTo('/products', '#destacados')}>Productos</li>
       <li on:click={() => moveTo('#comoComprar')}>Como Comprar</li>
       <li on:click={() => moveTo('#sobreMi')}>Sobre Mi</li>
@@ -35,7 +35,15 @@
 <style>
   
   nav {
-    padding: 20px 100px;
+    padding: 15px 100px;
+    background-color: #F8F9F9;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    box-shadow: 0px 2px 5px -5px rgba(0,0,0,1);
+
     display: flex;
     align-items: center;
   }
@@ -99,5 +107,85 @@
   .menu li:hover::before {
     width: 100%;
   }
+
+  
+  @media (max-width: 960px) {
+
+    nav {
+        padding: 15px 50px;
+    }
+
+  }
+
+  @media (max-width: 870px) {
+
+    nav {
+        padding: 15px 20px;
+    }
+    
+    h1{
+        font-size: 40px;
+    }
+
+    .menu ul {
+        padding: 0 20px;
+        font-size: 16px;
+    }
+  
+  }
+  
+  @media (max-width: 770px) {
+
+    .logo {
+        display: none;
+    }
+
+    nav {
+        padding: 15px 20px;
+    }
+
+    .menu ul {
+        padding: 0 30px;
+        font-size: 18px;
+    }
+
+  }
+
+
+  @media (max-width: 770px) {
+
+    nav {
+        padding: 15px 10px;
+    }
+
+    .menu ul {
+        padding: 0 20px;
+        font-size: 16px;
+    }
+  }
+
+  @media (max-width: 450px) {
+
+    nav {
+        padding: 15px 5px;
+    }
+
+    .menu ul {
+        padding: 0 10px;
+        font-size: 16px;
+    }
+  }  
+
+  @media (max-width: 380px) {
+
+    nav {
+        padding: 15px 2px;
+    }
+
+    .menu ul {
+        padding: 0 5px;
+        font-size: 14px;
+    }
+  }   
   
 </style>

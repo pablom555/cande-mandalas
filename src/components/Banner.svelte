@@ -30,6 +30,7 @@
     
     border-top: 1px solid #F06292;
     border-bottom: 1px solid #fccb6e;
+    margin-top: 97px;
 
     display: flex;
     justify-content: center;
@@ -75,5 +76,51 @@
                   1px 1px 0px transparent,
                   5px 5px 10px #607D8B;
   }
+
+  @media (max-width: 870px) {
+    .banner {
+        margin-top: 88px;
+    }
+  }
+
+  @media (max-width: 770px) {
+
+    .banner {
+        margin-top: 60px;
+    }
+
+    .banner h2 {
+        font-size: 30px;
+    }
+
+  }
+
+  @media (max-width: 650px) {
+
+    .banner-left, .banner-right {
+      display: none;
+    }
+
+    .banner {
+      height: 300px;
+    }
+
+    .banner-center {
+      flex-basis: 80% !important;
+    }
+
+    .banner h2 {
+        font-size: 35px;
+    }    
+  
+  }
+
+  @media (max-width: 450px) {
+
+    .banner h2 {
+        font-size: 30px;
+    }    
+
+  }  
 
 </style>

@@ -79,7 +79,7 @@
 
     .visible {
         opacity: 1;
-        z-index: 999;
+        z-index: 100;
     }
 
     .not-visible {

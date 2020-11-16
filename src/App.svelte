@@ -34,7 +34,6 @@
 
 	<HowBuy/>
 	<AboutMe/>
-	<Social/>
 
 </main> 
 

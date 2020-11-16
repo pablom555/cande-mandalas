@@ -5,9 +5,9 @@
 <div class="social">
   <p>Seguinos...</p>
   <div class="links">
-    <a href="#0"><i class="fab fa-facebook-f"></i></a>
-    <a href="#0"><i class="fab fa-twitter"></i></a>
-    <a href="#0"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.facebook.com/CanduMandalas/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="{void(0)}"><i class="fab fa-twitter"></i></a>
+    <a href="https://www.instagram.com/candumandalas/?hl=bg" target="_blank"><i class="fab fa-instagram"></i></a>
   </div>
 </div>
 
